@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, Newspaper, Sparkles } from "lucide-react";
+import { ExternalLink, Newspaper } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -16,31 +16,37 @@ const articles: Article[] = [
     title: "গ্র্যাজুয়েট হয়েও চাকরি মিলছে না? কী করবেন",
     outlet: "Bondhushava",
     url: "https://www.bondhushava.com/career/9hxwgpxc7a",
+    image: "graduate.jpg",
   },
   {
     title: "চাকরির জন্য কীভাবে রিজিউম লিখবেন? খুঁটিনাটি জানুন",
     outlet: "Bondhushava",
     url: "https://www.bondhushava.com/career/ws8u91cup6",
+    image: "job-sekking.jpg",
   },
   {
     title: "এআই টুল দিয়ে কীভাবে রিজিউম আকর্ষণীয় করবেন",
     outlet: "Bondhushava",
     url: "https://www.bondhushava.com/career/wpmwrivww8",
+    image: "ai-tools.jpg",
   },
   {
     title: "ইন্টারভিউয়ে কীভাবে নিজেকে প্রস্তুত করবেন",
     outlet: "Bondhushava",
     url: "https://www.bondhushava.com/career/dfg8bf5i9y",
+    image: "interview.jpg",
   },
   {
     title: "ইন্টারভিউতে যে জিনিসগুলো খেয়াল রাখবেন",
     outlet: "Bondhushava",
     url: "https://www.bondhushava.com/career/0t0h78n99a",
+    image: "interview-looking.jpg",
   },
   {
     title: "ইন্টারভিউ শেষে আপনার করণীয়",
     outlet: "Bondhushava",
     url: "https://www.bondhushava.com/career/qkbpwvfzci",
+    image: "need-to-do-after-interview.jpg",
   },
 ];
 
@@ -85,12 +91,12 @@ export default function ArticlesSection() {
             <h2 className="text-3xl font-serif font-bold leading-tight text-[#0f172a] sm:text-4xl">
               Writing That Moves People to Act
             </h2>
-            <div className="flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm shadow-primary/10">
+            {/* <div className="flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm shadow-primary/10">
               <Sparkles className="h-4 w-4 text-primary" />
               <span className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">
                 15+ Published Pieces
               </span>
-            </div>
+            </div> */}
           </div>
           <p className="max-w-3xl text-sm text-[#334155] sm:text-base">
             Features in Prothom Alo, Somoy News, Independent Television, Ajker
@@ -116,7 +122,11 @@ export default function ArticlesSection() {
             >
               <div className="relative h-44 w-full overflow-hidden">
                 <Image
-                  src={article.image || "/no-image.jpg"}
+                  src={
+                    article.image
+                      ? "/article/" + article.image
+                      : "/no-image.jpg"
+                  }
                   alt={article.title}
                   fill
                   className="object-cover transition duration-500 group-hover:scale-105"
