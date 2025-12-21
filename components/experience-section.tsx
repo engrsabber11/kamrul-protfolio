@@ -1,9 +1,14 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { Briefcase, CalendarIcon, Clock } from "lucide-react"
+import { Briefcase, CalendarIcon } from "lucide-react";
+import { useEffect, useState } from "react";
 
-const focusTags = ["Leadership Development", "Team Management", "Performance Coaching", "HR Operations"]
+const focusTags = [
+  "Leadership Development",
+  "Team Management",
+  "Performance Coaching",
+  "HR Operations",
+];
 
 const experiences = [
   {
@@ -86,28 +91,28 @@ const experiences = [
       "Prepare interview letters, reports, and appointment letters for new staff.",
     ],
   },
-]
+];
 
 export default function ExperienceSection() {
-  const [isInView, setIsInView] = useState(false)
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setIsInView(true)
+          setIsInView(true);
         }
       },
-      { threshold: 0.1 },
-    )
+      { threshold: 0.1 }
+    );
 
-    const section = document.getElementById("experience")
-    if (section) observer.observe(section)
+    const section = document.getElementById("experience");
+    if (section) observer.observe(section);
 
     return () => {
-      if (section) observer.unobserve(section)
-    }
-  }, [])
+      if (section) observer.unobserve(section);
+    };
+  }, []);
 
   return (
     <section
@@ -119,16 +124,23 @@ export default function ExperienceSection() {
       <div className="pointer-events-none absolute -right-16 bottom-8 h-72 w-72 rounded-full bg-[#0bd1e0]/14 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-screen-xl">
-        <div className={`mb-10 ${isInView ? "animate-fade-in-up" : "opacity-0"}`}>
+        <div
+          className={`mb-10 ${isInView ? "animate-fade-in-up" : "opacity-0"}`}
+        >
           <div className="flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.12em] text-[#4bb0ff]">
             <Briefcase className="h-5 w-5" />
             Experience
           </div>
-          <h2 className="mt-3 text-3xl font-serif font-bold leading-tight sm:text-4xl">Leadership Journey</h2>
+          <h2 className="mt-3 text-3xl font-serif font-bold leading-tight sm:text-4xl">
+            Leadership Journey
+          </h2>
 
           <div className="mt-4 flex flex-wrap gap-2">
             {focusTags.map((tag) => (
-              <span key={tag} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold">
+              <span
+                key={tag}
+                className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-semibold"
+              >
                 {tag}
               </span>
             ))}
@@ -147,18 +159,22 @@ export default function ExperienceSection() {
               <div className="mb-4 flex flex-col gap-2">
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <h3 className="text-lg font-semibold text-white">{exp.title}</h3>
-                    <p className="text-sm font-medium text-[#9ed3ff]">{exp.company}</p>
+                    <h3 className="text-lg font-semibold text-white">
+                      {exp.title}
+                    </h3>
+                    <p className="text-sm font-medium text-[#9ed3ff]">
+                      {exp.company}
+                    </p>
                   </div>
                   <div className="flex flex-col items-end text-xs text-[#c8d9ff]">
                     <span className="flex items-center gap-2">
                       <CalendarIcon className="h-4 w-4" />
                       {exp.period}
                     </span>
-                    <span className="mt-1 flex items-center gap-1 text-[#85c1ff]">
+                    {/* <span className="mt-1 flex items-center gap-1 text-[#85c1ff]">
                       <Clock className="h-3.5 w-3.5" />
                       {exp.duration}
-                    </span>
+                    </span> */}
                   </div>
                 </div>
               </div>
@@ -176,5 +192,5 @@ export default function ExperienceSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

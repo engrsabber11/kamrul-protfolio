@@ -103,7 +103,6 @@ export default function HeroSection() {
                     quality={95}
                   />
                 </div>
-                <div className="pointer-events-none absolute -right-4 top-6 h-12 w-12 rounded-full border border-white/20 bg-white/10 backdrop-blur" />
                 <div className="pointer-events-none absolute -left-3 bottom-6 h-10 w-10 rounded-full bg-[#22d3ee]/25 blur" />
               </div>
             </div>

@@ -1,19 +1,19 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
+import { Analytics } from "@vercel/analytics/next";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import type React from "react";
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Md. Kamrul Hassan - HR Strategist & People Leader",
+  title: "Kamrul - HR Strategist",
   description:
     "Explore the professional portfolio of Md. Kamrul Hassan, a Head of HR with 11+ years of experience in talent management, organizational development, and HR digital transformation.",
-  generator: "v0.app",
-  keywords: "HR, Human Resources, Leadership, Talent Management, Organizational Development",
+  keywords:
+    "HR, Human Resources, Leadership, Talent Management, Organizational Development",
   openGraph: {
-    title: "Md. Kamrul Hassan - HR Strategist & People Leader",
+    title: "Kamrul - HR Strategist & People Leader",
     description: "Head of HR | Strategist | Public Speaker | Researcher",
     type: "website",
   },
@@ -34,12 +34,12 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -48,5 +48,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

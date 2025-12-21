@@ -3,22 +3,62 @@
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const navItems = [
+  { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
+  { label: "Speaking", href: "#speaking" },
+  { label: "Thesis", href: "#thesis" },
+  { label: "Articles", href: "#articles" },
+  { label: "Training", href: "#training" },
+  { label: "Education", href: "#education" },
+  { label: "Contact", href: "#contact" },
+];
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeId, setActiveId] = useState("");
 
-  const navItems = [
-    { label: "About", href: "#about" },
-    { label: "Experience", href: "#experience" },
-    { label: "Skills", href: "#skills" },
-    { label: "Speaking", href: "#speaking" },
-    { label: "Thesis", href: "#thesis" },
-    { label: "Articles", href: "#articles" },
-    { label: "Training", href: "#training" },
-    { label: "Education", href: "#education" },
-    { label: "Contact", href: "#contact" },
-  ];
+  useEffect(() => {
+    const initialHash = window.location.hash.replace("#", "");
+    if (initialHash) setActiveId(initialHash);
+  }, []);
+
+  useEffect(() => {
+    const sections = navItems
+      .map((item) => document.getElementById(item.href.replace("#", "")))
+      .filter(Boolean) as HTMLElement[];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
+          }
+        });
+      },
+      { threshold: 0.35, rootMargin: "-20% 0px -45% 0px" }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
+  const linkClasses = (href: string) => {
+    const id = href.replace("#", "");
+    const isActive = activeId === id;
+    return [
+      "text-sm transition-colors",
+      isActive
+        ? "text-foreground font-semibold"
+        : "text-muted-foreground hover:text-foreground",
+    ].join(" ");
+  };
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-sm">
@@ -42,7 +82,8 @@ export default function Navigation() {
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className={linkClasses(item.href)}
+              onClick={() => setActiveId(item.href.replace("#", ""))}
             >
               {item.label}
             </a>
@@ -59,14 +100,19 @@ export default function Navigation() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden border-b border-border bg-background shadow-lg">
-          <div className="flex flex-col gap-4 p-5">
+        <div className="border-b border-border bg-background shadow-lg md:hidden">
+          <div className="flex flex-col gap-2 p-5">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                onClick={() => setIsOpen(false)}
+                className={`${linkClasses(
+                  item.href
+                )} rounded-lg px-3 py-2 hover:bg-muted/40`}
+                onClick={() => {
+                  setActiveId(item.href.replace("#", ""));
+                  setIsOpen(false);
+                }}
               >
                 {item.label}
               </a>
