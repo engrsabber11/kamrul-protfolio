@@ -89,13 +89,13 @@ export default function HeroSection() {
           </div>
 
           <div className="flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[420px]">
-              <div className="absolute inset-0 rounded-[32px] bg-[#22d3ee]/18 blur-3xl" />
-              <div className="relative overflow-hidden rounded-[28px] border border-white/15 bg-white/5 shadow-2xl backdrop-blur">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5" />
-                <div className="relative aspect-[4/5] rounded-[26px] border border-white/10 overflow-hidden">
+            <div className="relative w-full max-w-[360px] sm:max-w-[400px]">
+              <div className="absolute inset-0 rounded-full bg-[#22d3ee]/20 blur-3xl" />
+              <div className="relative aspect-square rounded-full border border-white/20 bg-white/5 p-3 shadow-2xl backdrop-blur">
+                <div className="absolute inset-2 rounded-full bg-gradient-to-br from-white/10 via-transparent to-white/5" />
+                <div className="relative h-full w-full overflow-hidden rounded-full border border-white/15">
                   <Image
-                    src="/professional-portrait-of-hr-leader-in-business-sui.jpg"
+                    src="/profile-image.jpg"
                     alt="Md. Kamrul Hassan - HR Professional"
                     fill
                     className="object-cover"
@@ -103,6 +103,8 @@ export default function HeroSection() {
                     quality={95}
                   />
                 </div>
+                <div className="pointer-events-none absolute -right-4 top-6 h-12 w-12 rounded-full border border-white/20 bg-white/10 backdrop-blur" />
+                <div className="pointer-events-none absolute -left-3 bottom-6 h-10 w-10 rounded-full bg-[#22d3ee]/25 blur" />
               </div>
             </div>
           </div>

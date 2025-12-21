@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -20,55 +21,59 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-        <Link
-          href="/"
-          className="font-semibold text-lg text-foreground hover:text-primary transition-colors"
-        >
-          Kamrul Hassan
+    <nav className="sticky top-0 z-50 border-b border-border bg-background/85 backdrop-blur-sm">
+      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <Link href="/" className="flex items-center gap-3">
+          <div className="relative h-12 w-12 overflow-hidden rounded-full border border-border bg-muted">
+            <Image
+              src="/sm-profile-image.jpg"
+              alt="Md. Kamrul Hassan"
+              fill
+              className="object-cover"
+              sizes="40px"
+              priority
+            />
+          </div>
+          <span className="sr-only">Md. Kamrul Hassan</span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex gap-8">
+        <div className="hidden gap-8 md:flex">
           {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm text-muted-foreground transition-colors hover:text-foreground"
             >
               {item.label}
             </a>
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2"
+          className="p-2 md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
-
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="absolute top-16 left-0 right-0 bg-background border-b border-border md:hidden">
-            <div className="flex flex-col gap-4 p-4">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
+
+      {isOpen && (
+        <div className="md:hidden border-b border-border bg-background shadow-lg">
+          <div className="flex flex-col gap-4 p-5">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
