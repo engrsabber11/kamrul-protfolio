@@ -41,7 +41,7 @@ export default function ContactSection() {
       name: "Mohammad Riyad Hossain",
       title: "Head of Human Resources, RAK Ceramics Bangladesh Limited",
       contact: "+8801730736044",
-      email: "diponbd@gmail.com",
+      email: "kamrulhassan.hrprofessional@gmail.com",
     },
   ];
 
