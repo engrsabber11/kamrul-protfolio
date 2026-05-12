@@ -41,7 +41,7 @@ export default function ContactSection() {
       name: "Mohammad Riyad Hossain",
       title: "Head of Human Resources, RAK Ceramics Bangladesh Limited",
       contact: "+8801730736044",
-      email: "kamrulhassan.hrprofessional@gmail.com",
+      email: "diponbd@gmail.com",
     },
   ];
 
@@ -70,9 +70,9 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="grid gap-6 lg:grid-cols-[1.35fr_0.65fr]">
           <div
-            className={`relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-primary/15 via-background to-background p-8 shadow-xl ${
+            className={`relative overflow-hidden rounded-3xl border border-border bg-gradient-to-br from-primary/15 via-background to-background p-6 shadow-xl sm:p-8 ${
               isInView ? "animate-fade-in-up" : "opacity-0"
             }`}
           >
@@ -92,12 +92,14 @@ export default function ContactSection() {
 
               <div className="grid gap-3 sm:grid-cols-2">
                 <a
-                  href="mailto:biplobrevolution06@gmail.com"
+                  href="mailto:kamrulhassan.hrprofessional@gmail.com"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-xl border border-primary/40 bg-primary/10 px-4 py-3 text-sm font-semibold text-primary transition hover:bg-primary/15"
+                  className="inline-flex min-w-0 items-center justify-center gap-2 whitespace-nowrap rounded-xl border border-primary/40 bg-primary/10 px-3 py-3 text-[11px] font-semibold text-primary transition hover:bg-primary/15 sm:col-span-2 sm:px-4 sm:text-sm xl:col-span-1"
                 >
-                  <Mail className="w-4 h-4" />
-                  biplobrevolution06@gmail.com
+                  <Mail className="h-4 w-4 shrink-0" />
+                  <span className="min-w-0">
+                    kamrulhassan.hrprofessional@gmail.com
+                  </span>
                 </a>
                 <a
                   href="tel:+8801736105272"
