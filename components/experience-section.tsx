@@ -29,6 +29,22 @@ const experiences = [
     ],
   },
   {
+    title: "Adjunct Faculty",
+    company: "Daffodil International University",
+    period: "May 2026 – Present",
+    //duration: "1.11 yrs",
+    bullets: [
+      "Conduct lectures and practical sessions for undergraduate students in assigned courses.",
+    "Prepare course materials, lesson plans, assignments, and assessment activities aligned with academic objectives.",
+    "Guide students through academic projects, presentations, and collaborative learning activities.",
+    "Evaluate student performance through quizzes, assignments, viva, and examinations.",
+    "Provide academic mentoring and support to help students improve technical and professional skills.",
+    "Collaborate with faculty members to maintain curriculum quality and effective teaching practices.",
+    "Promote an interactive and student-centered learning environment inside and outside the classroom.",
+    "Participate in departmental academic activities, workshops, and curriculum development initiatives.",
+    ],
+  },
+  {
     title: "Head of Human Resources",
     company: "Twelve Clothing Limited (Team Group)",
     period: "March 2022 – February 2024",

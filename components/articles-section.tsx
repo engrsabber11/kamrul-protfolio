@@ -48,6 +48,24 @@ const articles: Article[] = [
     url: "https://www.bondhushava.com/career/qkbpwvfzci",
     image: "need-to-do-after-interview.jpg",
   },
+   {
+    title: "মাল্টি স্কিল কেন আপনার ভবিষ্যতের জন্য এত জরুরি",
+    outlet: "Bondhushava",
+    url: "https://www.bondhushava.com/career/yvef6od15j",
+    image: "mutiskil.jpg",
+  },
+  {
+    title: "চাকরির প্রবেশন সময়ে কী কী চ্যালেঞ্জে পড়তে হয়",
+    outlet: "Bondhushava",
+    url: "https://www.bondhushava.com/career/1bcvcyma4l",
+    image: "challanges.jpg",
+  },
+  {
+    title: "ভবিষ্যৎ গড়ার পথে ইন্টার্নশিপ নাকি প্রজেক্ট পেপার",
+    outlet: "Bondhushava",
+    url: "https://www.bondhushava.com/career/boia2iwdfc",
+    image: "Future-groth.jpg",
+  },
 ];
 
 export default function ArticlesSection() {

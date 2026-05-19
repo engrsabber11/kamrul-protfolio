@@ -1,5 +1,11 @@
 export const universitySessions = [
   {
+    name: "University of Dhaka",
+    topic:
+      "Performance Management Systems: Aligning People, Strategy, and Organizational Growth",
+    image: "/speaking/DU-speak.jpg",
+  },
+  {
     name: "Institute of Business Administration, Jahangirnagar University",
     topic:
       "Exploring the impact of HR and the exciting future of people-focused leadership",
