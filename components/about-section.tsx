@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 const highlights = [
-  { value: "11+ years", label: "Strategic HR leadership" },
+  { value: "12+ years", label: "Strategic HR leadership" },
   { value: "500+ hours", label: "Speaking, training & coaching" },
   { value: "2", label: "International journal publications" },
 ];
