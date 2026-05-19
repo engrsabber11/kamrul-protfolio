@@ -95,7 +95,7 @@ export default function AboutSection() {
 
               <div className="space-y-5 text-base leading-relaxed text-[#d7e4ff] sm:text-lg">
                 <p>
-                  With over 11 years of dedicated experience in Human Resources,
+                  With over 12 years+ of dedicated experience in Human Resources,
                   I have developed strong strategic and operational expertise in
                   talent management, organizational development, and employee
                   engagement. As Head of HR, I have successfully led initiatives

@@ -4,7 +4,7 @@ import { BadgeCheck, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
 
 const stats = [
-  { value: "11+", label: "Years in HR leadership" },
+  { value: "12+", label: "Years in HR leadership" },
   { value: "500+", label: "Hours of speaking" },
   { value: "300+", label: "Media broadcasts" },
 ];
