@@ -45,18 +45,18 @@ const experiences = [
     "Follow university policies, academic standards, and code of conduct.",
     ],
   },
-  {
-    title: "News Presenter",
-    company: "Channel S",
-    period: "January 2026 – Present",
-    //duration: "2.0 yrs",
-    bullets: [
-  "Present live bulletins and recorded news programs with clarity, confidence, and strong audience engagement.",
-  "Prepare, edit, and deliver accurate news scripts tailored for digital platforms and online audiences.",
-  "Handle breaking news coverage efficiently by delivering verified information under tight deadlines and high-pressure situations.",
-  "Manage multi-platform news presentation for web, mobile applications, and social media streaming with digital-friendly storytelling techniques.",
-    ],
-  },
+  // {
+  //   title: "News Presenter",
+  //   company: "Channel S",
+  //   period: "January 2026 – Present",
+  //   //duration: "2.0 yrs",
+  //   bullets: [
+  // "Present live bulletins and recorded news programs with clarity, confidence, and strong audience engagement.",
+  // "Prepare, edit, and deliver accurate news scripts tailored for digital platforms and online audiences.",
+  // "Handle breaking news coverage efficiently by delivering verified information under tight deadlines and high-pressure situations.",
+  // "Manage multi-platform news presentation for web, mobile applications, and social media streaming with digital-friendly storytelling techniques.",
+  //   ],
+  // },
   {
     title: "Head of Human Resources",
     company: "Twelve Clothing Limited (Team Group)",
