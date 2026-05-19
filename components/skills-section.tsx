@@ -8,7 +8,7 @@ const cocurricular = {
   summary:
     "Six years of professional presenting across online TV and FM radio; 300+ broadcasts on national, international, and socio-economic topics.",
   details: [
-    "Lead presenter for Millennium Online TV and Dhoni 91.2 FM",
+    "Lead presenter for Channel S, Millennium Online TV and Dhoni 91.2 FM",
     "Skilled in script review, live delivery, newsroom coordination, and editorial standards",
     "Comfortable across diverse media platforms with high-pressure live formats",
   ],
